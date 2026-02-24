@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Tuki version ",
+  "version": "2",
+  "description": "A Chrome extension using Vite + React with a side panel",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "type": "module"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "permissions": ["sidePanel", "activeTab", "scripting", "tabs"],
+  "action": {
+    "default_title": "Open Side Panel"
+  },
+  "icons": {
+    "16": "icons/tuki.png",
+    "48": "icons/tuki.png",
+    "128": "icons/tuki.png"
+  },
+
+  "host_permissions": ["http://*/*", "https://*/*", "<all_urls>"]
+}

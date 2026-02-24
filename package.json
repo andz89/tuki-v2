@@ -1,0 +1,27 @@
+{
+  "type": "module",
+  "scripts": {
+ 
+      "dev": "vite build --watch && vite build --config vite.content.config.js --watch",
+    "build": "vite build && vite build --config vite.content.config.js"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.16",
+    "@vitejs/plugin-react": "^4",
+    "autoprefixer": "^10.4.21",
+    "htmlhint": "^1.7.1",
+    "postcss": "^8.5.6",
+    "rollup-plugin-copy": "^3",
+    "tailwindcss": "^4.1.16",
+    "vite": "^5"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.16",
+    "js-beautify": "^1.15.4",
+    "mark.js": "^8.11.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-router-dom": "^7.9.5",
+    "zustand": "^5.0.8"
+  }
+}
