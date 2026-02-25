@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PageMetaTemplate({ data }) {
-  const { title, description, lang, canonical, hasLynxScript } = data || {};
+  const { title, description, lang, canonical, lynxSrc } = data || {};
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-2 border border-gray-200 dark:border-gray-700">
@@ -61,8 +61,8 @@ export default function PageMetaTemplate({ data }) {
           Lynx Script:
         </span>{" "}
         <span className="text-sm text-gray-600 dark:text-gray-400">
-          {hasLynxScript ? (
-            <span className="text-green-600">Script found</span>
+          {lynxSrc ? (
+            <span className="text-green-600 break-all">{lynxSrc}</span>
           ) : (
             <span className="text-red-600">Script not found</span>
           )}

@@ -54,13 +54,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     const title = document.title || null;
 
-    const hasLynxScript = !!document.querySelector(
+    const lynxScript = document.querySelector(
       'script[src*="lynx.younity.com/lynx/client"]'
     );
 
-    console.log("Lynx detected:", hasLynxScript);
+    const hasLynxScript = !!lynxScript;
+    const lynxSrc = lynxScript ? lynxScript.src : null;
 
-    sendResponse({ description, lang, canonical, title, hasLynxScript });
+    // console.log("has:", hasLynxScript);
+    // console.log("src:", lynxSrc);
+
+    sendResponse({ description, lang, canonical, title, lynxSrc });
   }
 
   if (message.type === "getHyvorTalk") {
